@@ -1,3 +1,3 @@
-# newspace
+# Newspace
 
-A new Flutter project.
+A news portal powered by Flutter.
