@@ -49,37 +49,41 @@ class DefaultFirebaseOptions {
     messagingSenderId: '394370264308',
     projectId: 'porto-space-app',
     authDomain: 'porto-space-app.firebaseapp.com',
+    databaseURL: 'https://porto-space-app-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'porto-space-app.appspot.com',
     measurementId: 'G-H194EK7KHS',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCBG-rp2_-Qgyq0fNahPsSL-rPYb2gjZOA',
-    appId: '1:394370264308:android:6be032b1045bfa903cc2a1',
+    appId: '1:394370264308:android:e9ddc4f04bd85db93cc2a1',
     messagingSenderId: '394370264308',
     projectId: 'porto-space-app',
+    databaseURL: 'https://porto-space-app-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'porto-space-app.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBT7m4Bc20Ax3PLKXe0Di9T7rc7qrObk_4',
-    appId: '1:394370264308:ios:b08405600690d2103cc2a1',
+    appId: '1:394370264308:ios:34967e0865a372a03cc2a1',
     messagingSenderId: '394370264308',
     projectId: 'porto-space-app',
+    databaseURL: 'https://porto-space-app-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'porto-space-app.appspot.com',
-    androidClientId: '394370264308-a6lnckpgd2cmm22ot9jvh0knk7fqb200.apps.googleusercontent.com',
-    iosClientId: '394370264308-onucspa3vhpujjm1l2lm0n8pgllqs6ia.apps.googleusercontent.com',
-    iosBundleId: 'com.example.newPortoSpace',
+    androidClientId: '394370264308-46atkl5majpm9c4es1dborsaf9heuuns.apps.googleusercontent.com',
+    iosClientId: '394370264308-64gv7ar931d4nfsujrbjfg21iepolihq.apps.googleusercontent.com',
+    iosBundleId: 'com.example.newspace',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBT7m4Bc20Ax3PLKXe0Di9T7rc7qrObk_4',
-    appId: '1:394370264308:ios:b020b8d73941e3153cc2a1',
+    appId: '1:394370264308:ios:25819adf119506693cc2a1',
     messagingSenderId: '394370264308',
     projectId: 'porto-space-app',
+    databaseURL: 'https://porto-space-app-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'porto-space-app.appspot.com',
-    androidClientId: '394370264308-a6lnckpgd2cmm22ot9jvh0knk7fqb200.apps.googleusercontent.com',
-    iosClientId: '394370264308-reti9m24rs6tt5mo02g1kocn4u8cmrog.apps.googleusercontent.com',
-    iosBundleId: 'com.example.newPortoSpace.RunnerTests',
+    androidClientId: '394370264308-46atkl5majpm9c4es1dborsaf9heuuns.apps.googleusercontent.com',
+    iosClientId: '394370264308-s37038bqq665drvlm7nq66fslaihk0is.apps.googleusercontent.com',
+    iosBundleId: 'com.example.newspace.RunnerTests',
   );
 }

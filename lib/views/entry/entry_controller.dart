@@ -8,7 +8,7 @@ class EntryController extends GetxController{
   final GoogleSignIn googleSignIn = GoogleSignIn();
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  initiateLogin(){
+  initiateGoogleLogin(){
     OnGoogleLogin(googleSignIn: googleSignIn, auth: auth);
   }
   

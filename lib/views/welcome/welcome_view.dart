@@ -17,14 +17,11 @@ class WelcomeScreen extends GetView<WelcomeController> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-      ),
+      appBar: AppBar(),
       body: Container(
         width: double.infinity,
         height: double.infinity,
         padding: const EdgeInsets.all(8),
-        color: Colors.white,
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
@@ -37,9 +34,9 @@ class WelcomeScreen extends GetView<WelcomeController> {
                     height: 60,
                     width: 60,
                     child: Get.isDarkMode? const RiveAnimation.asset(
-                      'assets/animation/tristructure - white.riv',
+                      'assets/animations/tristructure - white.riv',
                     ):const RiveAnimation.asset(
-                      'assets/animation/tristructure.riv',
+                      'assets/animations/tristructure.riv',
                     ),
                   ),
                   const Text("News|Space"),
@@ -70,8 +67,8 @@ class WelcomeScreen extends GetView<WelcomeController> {
                   height: double.infinity,
                   child: Center(
                     child:Text('''
-                                  Here you can get any news from around the the world.
-                                  Be it from where you live, or anywhere in the world.
+Here you can get any news from around the the world.
+Be it from where you live, or anywhere in the world.
                               ''')),
                 ),
                 SizedBox(
@@ -100,7 +97,6 @@ class WelcomeScreen extends GetView<WelcomeController> {
       bottomNavigationBar: Obx(() => Container(
         height: Get.height*0.1,
         width: double.infinity,
-        color: Colors.white,
         child: Center(
           child: DotsIndicator(
             position: controller.state.index.value.toDouble(),
