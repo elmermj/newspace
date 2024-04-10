@@ -1,0 +1,109 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:781959047654909120",
+      "lastPropertyId": "14:5171295237388573876",
+      "name": "UserAccountModel",
+      "properties": [
+        {
+          "id": "1:5979494071147414743",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4470176992413878262",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:5421156472503305413",
+          "name": "dob",
+          "type": 9
+        },
+        {
+          "id": "4:1353554876275704982",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "5:7081178428347404850",
+          "name": "city",
+          "type": 9
+        },
+        {
+          "id": "6:7402009181918515311",
+          "name": "profileDesc",
+          "type": 9
+        },
+        {
+          "id": "7:8339236183765174940",
+          "name": "followers",
+          "type": 6
+        },
+        {
+          "id": "8:1153955385703198170",
+          "name": "interests",
+          "type": 9
+        },
+        {
+          "id": "9:8419656106544080440",
+          "name": "currentCompany",
+          "type": 9
+        },
+        {
+          "id": "10:1336476638726249033",
+          "name": "occupation",
+          "type": 9
+        },
+        {
+          "id": "11:8609176921661801172",
+          "name": "photoUrl",
+          "type": 9
+        },
+        {
+          "id": "13:1707874249109919598",
+          "name": "deviceToken",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:1714582446396804106",
+      "lastPropertyId": "2:5830200482924099815",
+      "name": "NewAppValidationModel",
+      "properties": [
+        {
+          "id": "1:6923936772808446034",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5830200482924099815",
+          "name": "isOpened",
+          "type": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:1714582446396804106",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    746361275310292269,
+    5171295237388573876
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,0 +1,44 @@
+name: newspace
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  objectbox: ^2.5.1
+  objectbox_flutter_libs: any
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  get: ^4.6.6
+  http:
+  google_sign_in: ^5.2.1
+  rive: ^0.7.10
+  auto_size_text:
+  firebase_core:
+  firebase_auth: ^4.7.3
+  cloud_firestore: ^4.8.5
+  firebase_storage: ^11.2.6
+  firebase_messaging: ^14.6.2
+  firebase_app_check: ^0.1.4+2
+  path: ^1.8.0
+  path_provider: ^2.0.2
+  dots_indicator: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  build_runner: ^2.0.0
+  objectbox_generator: any
+  mockito: 
+
+flutter:
+  uses-material-design: true
+  assets:  
+    - assets/animations/tristructure.riv
+    - assets/animations/tristructure - white.riv
