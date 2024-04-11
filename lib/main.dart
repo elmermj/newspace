@@ -129,6 +129,7 @@ class NewspaceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
       themeMode: ThemeMode.system,
       theme: ThemeData.from(colorScheme: lightScheme(), useMaterial3: true),
