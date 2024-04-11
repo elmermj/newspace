@@ -9,6 +9,8 @@ class APIs {
   static String newsAPIkey = <PASTE-YOUR-API-KEY> ;
 }
 
+Or you can download the app-release.apk directly by pulling this code
+
 Notes:
 1. The default region is "ID" (Indonesia). Only "US" (United States) region provides the URL to the article's image.
 2. The timestamp is subtracted by 1 day to simulate the time difference between DateTime.now() and the articles' published timestamp. 
