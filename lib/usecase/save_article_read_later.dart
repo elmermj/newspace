@@ -22,22 +22,22 @@ class SaveArticleReadLater extends Execute {
     List<NewsArticleModel> savedArticles = <NewsArticleModel>[];
 
     if (dynamicList != null) {
-        for (var dynamicArticle in dynamicList) {
-            if (dynamicArticle is NewsArticleModel) {
-                if(dynamicArticle.author == article.author 
-                  && 
-                dynamicArticle.title == article.title){
-                  doesExist = true;
-                  break;
-                }else{
-                  doesExist = false;
-                  savedArticles.add(dynamicArticle);
-                }
+    for (var dynamicArticle in dynamicList) {
+        if (dynamicArticle is NewsArticleModel) {
+          if(dynamicArticle.author == article.author 
+            && 
+          dynamicArticle.title == article.title){
+            doesExist = true;
+            break;
+          }else{
+            doesExist = false;
+            savedArticles.add(dynamicArticle);
+          }
 
-            } else {
-                logRed("Invalid type found in saved articles list: ${dynamicArticle.runtimeType}");
-            }
+        } else {
+          logRed("Invalid type found in saved articles list: ${dynamicArticle.runtimeType}");
         }
+      }
     }
 
     if(doesExist){

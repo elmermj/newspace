@@ -170,11 +170,9 @@ getNotificationToken() async {
 Future<void> requestStoragePermission() async {
   PermissionStatus status = await Permission.storage.request();
   if (status.isGranted) {
-      // Permission is granted
       permissionGranted.value = true;
       logGreen("Storage permission granted.");
   } else {
-      // Permission is denied or restricted
       permissionGranted.value = false;
       logRed("Storage permission denied.");
   }

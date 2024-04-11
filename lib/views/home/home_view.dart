@@ -228,12 +228,10 @@ class HomeView extends GetView<HomeController> {
                                 );
                               }else {
                                 logYellow("INDEX NUMBER ::: $index");
-                                // Access the article at the current index
                                 NewsArticleModel article = controller.newsArticles[index];
                           
                                 Duration timeDifference = DateTime.now().subtract(const Duration(days: 1)).difference(article.publishedAt!.toDate());
                                             
-                                // Convert time difference to a human-readable format
                                 String timeAgo;
                                 if (timeDifference.inMinutes < 60) {
                                   timeAgo = "${timeDifference.inMinutes} minutes ago";
