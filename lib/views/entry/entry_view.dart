@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newspace/utils/constants.dart';
 import 'package:newspace/views/entry/entry_controller.dart';
+import 'package:rive/rive.dart';
 
 class EntryView extends GetView<EntryController> {
   EntryView({super.key});
@@ -15,30 +16,44 @@ class EntryView extends GetView<EntryController> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.directional(
-            top: 0.2 * Get.height,
-            start: 0.1 * Get.width,
-            textDirection: TextDirection.ltr, 
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+          Align(
+            alignment: const AlignmentDirectional(-0.8, -0.5),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  "Welcome to",
-                  style: newspaceWelcomeStyle,
+                SizedBox(
+                  height: 48,
+                  width: 48,
+                  child: Get.isDarkMode? const RiveAnimation.asset(
+                    'assets/animations/tristructure - white.riv',
+                  ):const RiveAnimation.asset(
+                    'assets/animations/tristructure.riv',
+                  ),
                 ),
-                Text(
-                  "Newspace",
-                  style: newspaceTitleStyle,
-                ),
-                Text(
-                  "by Portospace",
-                  style: newspaceWelcomeStyle,
+                const SizedBox(width: 16,),
+                const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Welcome to",
+                      style: newspaceWelcomeStyle,
+                    ),
+                    Text(
+                      "Newspace",
+                      style: newspaceTitleStyle,
+                    ),
+                    Text(
+                      "by Portospace",
+                      style: newspaceWelcomeStyle,
+                    ),
+                  ],
                 ),
               ],
             )
           ),
           Align(
-            alignment: const AlignmentDirectional(0, 0.75),
+            alignment: const AlignmentDirectional(0, 1),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -65,18 +80,24 @@ class EntryView extends GetView<EntryController> {
                   )
                 ),
                 const SizedBox(height: 12),
-                const AutoSizeText(
-                  "A Porto account will be automatically created if you don't have one.",
-                  style: newspaceThinStyle,
-                  maxLines: 2,
-                  minFontSize: 8,
-                  maxFontSize: 16,
-                  overflow: TextOverflow.ellipsis,
-                )
               ],
             ),
           )
         ],
+      ),
+      bottomNavigationBar: const SizedBox(
+        height: kBottomNavigationBarHeight,
+        width: double.infinity,
+        child: Center(
+          child: AutoSizeText(
+            "A Porto account will be automatically created if you don't have one.",
+            style: newspaceThinStyle,
+            maxLines: 2,
+            minFontSize: 8,
+            maxFontSize: 16,
+            overflow: TextOverflow.ellipsis,
+          )
+        )
       )
     );
   }

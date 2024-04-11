@@ -8,17 +8,10 @@ import 'package:newspace/usecase/save_user_data_to_local.dart';
 class RecalibrateUserData extends Execute {
   final User user;
   
-  RecalibrateUserData({required this.user, super.instance = 'RecalibrateUserData'}){
-    execute();
-  }
+  RecalibrateUserData({required this.user, super.instance = 'RecalibrateUserData'});
 
   @override
   execute() async {
-    await executeWithCatchError(super.instance);
-  }
-
-  @override
-  executeWithCatchError(String instance) async {
     logYellow("recalibrating user data from remote (firestore)...");
     final CollectionReference users = FirebaseFirestore.instance.collection('users');
     await users.doc(user.uid).get().then((DocumentSnapshot doc) async {

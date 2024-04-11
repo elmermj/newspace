@@ -2,14 +2,16 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ShowSnackBar {
+class ShowSnackBarPrompt {
   final String title, message;
   final Duration duration;
+  final Function(GetSnackBar)? onTap;
 
-  ShowSnackBar({
+  ShowSnackBarPrompt({
     required this.title,
     required this.message,
     required this.duration,
+    this.onTap,
   }){
     Get.isSnackbarOpen?Get.back():null;
     Get.snackbar(
@@ -33,7 +35,8 @@ class ShowSnackBar {
       maxWidth: 480,
       overlayBlur: 0.5,
       backgroundColor: Get.theme.colorScheme.primary,
-      colorText: Get.theme.colorScheme.onPrimary
+      colorText: Get.theme.colorScheme.onPrimary,
+      onTap: onTap
     );
   }
 }

@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:newspace/views/entry/entry_view.dart';
-import 'package:newspace/views/welcome/welcome_state.dart';
 
 class WelcomeController extends GetxController {
-  final state = WelcomeState();
+  RxInt index = 0.obs;
 
   @override
   onInit() async {
@@ -14,12 +13,11 @@ class WelcomeController extends GetxController {
     await isNewAppBox.close();
   }
 
-  changePage(int index) async {
-    state.index.value = index;
+  changePage(int pageIndex) async {
+    index.value = pageIndex;
   }
 
   toEntryView() async {
     Get.offAll(()=> EntryView());
   }
-
 }

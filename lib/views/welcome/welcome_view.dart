@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:newspace/utils/constants.dart';
 import 'package:newspace/views/welcome/welcome_controller.dart';
 import 'package:rive/rive.dart';
 
@@ -31,15 +32,18 @@ class WelcomeScreen extends GetView<WelcomeController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [                  
                   SizedBox(
-                    height: 60,
-                    width: 60,
+                    height: 48,
+                    width: 48,
                     child: Get.isDarkMode? const RiveAnimation.asset(
                       'assets/animations/tristructure - white.riv',
                     ):const RiveAnimation.asset(
                       'assets/animations/tristructure.riv',
                     ),
                   ),
-                  const Text("News|Space"),
+                  const Text(
+                    "Newspace",
+                    style: newspaceTitleStyle,
+                  ),
                 ],
               ),
             ),
@@ -94,12 +98,12 @@ Be it from where you live, or anywhere in the world.
           ],        
         )
       ),
-      bottomNavigationBar: Obx(() => Container(
+      bottomNavigationBar: Obx(() => SizedBox(
         height: Get.height*0.1,
         width: double.infinity,
         child: Center(
           child: DotsIndicator(
-            position: controller.state.index.value.toDouble(),
+            position: controller.index.value.toDouble(),
             dotsCount: 3,
             reversed: false,
             mainAxisAlignment: MainAxisAlignment.center,

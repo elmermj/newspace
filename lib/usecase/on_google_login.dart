@@ -4,27 +4,20 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:newspace/components/show_snackbar.dart';
 import 'package:newspace/main.dart';
-import 'package:newspace/usecase/update_lastUID.dart';
+import 'package:newspace/usecase/update_last_uid.dart';
 import 'package:newspace/utils/execute.dart';
 import 'package:newspace/usecase/save_user_data_to_local.dart';
 import 'package:newspace/views/home/home_view.dart';
-import 'package:newspace/usecase/fetch_user_data_from_remote.dart';
+import 'package:newspace/usecase/recalibrate_user_data.dart';
 
 class OnGoogleLogin extends Execute {
   final GoogleSignIn googleSignIn;
   final FirebaseAuth auth;
 
-  OnGoogleLogin({required this.googleSignIn, required this.auth, super.instance = 'OnGoogleLogin'}){
-    execute();
-  }
+  OnGoogleLogin({required this.googleSignIn, required this.auth, super.instance = 'OnGoogleLogin'});
 
   @override
   execute() async {
-    await executeWithCatchError(super.instance);
-  }
-
-  @override
-  executeWithCatchError(String instance) async {
     logYellow("onGoogleLogin");
     ShowSnackBar(
       title: "Logging In...", 
@@ -44,6 +37,7 @@ class OnGoogleLogin extends Execute {
         return null;
       },
     );
+    
     final GoogleSignInAuthentication googleAuth = await googleUser!.authentication.timeout(
       const Duration(seconds: 55),
       onTimeout: () {
@@ -68,6 +62,7 @@ class OnGoogleLogin extends Execute {
 
     final CollectionReference users = FirebaseFirestore.instance.collection('users');
     if (isNewUser) {
+      logYellow("NEW USER");
       await users.doc(user.uid).set({
         'name': user.displayName!,
         'email': user.email,
@@ -81,8 +76,9 @@ class OnGoogleLogin extends Execute {
       UpdateLastUID(id: user.uid);
       if(Get.isSnackbarOpen) Get.back();
 
-      Get.off(()=>const HomeView());
+      Get.off(()=>HomeView());
     } else {
+      logYellow("OLD USER");
       await users.doc(user.uid).update({
         'lastLoginAt': FieldValue.serverTimestamp(),
         'deviceToken': deviceToken.value
@@ -97,7 +93,8 @@ class OnGoogleLogin extends Execute {
       UpdateLastUID(id: user.uid);
       if(Get.isSnackbarOpen) Get.back();
 
-      Get.offAll(()=>const HomeView());
+      Get.offAll(()=>HomeView());
     }
   }
+  
 }
